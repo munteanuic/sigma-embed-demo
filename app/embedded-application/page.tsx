@@ -8,9 +8,10 @@ export default async function Page() {
 
   return (
     <main>
-        <h3>Your Sigma Embed</h3>
-        {/*<h2>Page:</h2>*/}
-        <iframe style={ { height: '800px'} } src={embedUrl} frameBorder="0" />
+        <h3>Submit Your Airport Reviews</h3>
+        <div className='box'>
+          <iframe style={ { height: '400px', width: '400px' } } src={embedUrl} frameBorder="0" />
+        </div>
     </main>
   );
 }

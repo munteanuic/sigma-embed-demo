@@ -20,13 +20,13 @@ export default function Nav() {
                 <a>Home</a>
               </Link>
             </li>
-            <li>
-              <Link href="/embedded-application" legacyBehavior>
-                <a>Embedded Application</a>
-              </Link>
-            </li>
             {user ? (
               <>
+                <li>
+                  <Link href="/embedded-application" legacyBehavior>
+                    <a>Embedded Application</a>
+                  </Link>
+                </li>
                 <li>
                   <a href="/api/auth/logout" data-testid="logout">
                     Logout

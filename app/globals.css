@@ -24,7 +24,7 @@ ul {
 li {
     margin-right: 1rem;
 }
-.header.secondary li:nth-last-child(3) {
+.header li:nth-last-child(2) {
     margin-right: auto;
 }
 .header a {
@@ -48,8 +48,10 @@ button {
     margin: 1.5rem auto;
 }
 
+.box {
+    display: grid;
+}
+
 iframe {
-    flex-grow: 1; /* Allow the iframe to fill the available space */
-    width: 100%; /* Full width */
     border: none; /* Remove the iframe border */
 }
