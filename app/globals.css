@@ -1,0 +1,55 @@
+body {
+    margin: 0;
+    color: #333;
+    font-family: sans-serif;
+}
+.header {
+    padding: 0.2rem;
+    color: #fff;
+    background-color: #000;
+}
+.header.secondary {
+    background-color: #333;
+}
+nav {
+    max-width: 62rem;
+    margin: 1.5rem auto;
+}
+ul {
+    display: flex;
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+li {
+    margin-right: 1rem;
+}
+.header.secondary li:nth-last-child(3) {
+    margin-right: auto;
+}
+.header a {
+    color: #fff;
+    text-decoration: none;
+}
+.header.home a[href='/'],
+.header.embedded-application a[href$='/embedded-application'],
+a.active {
+    color: #888;
+}
+button {
+    font-size: 1rem;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+.container {
+    max-width: 62rem;
+    margin: 1.5rem auto;
+}
+
+iframe {
+    flex-grow: 1; /* Allow the iframe to fill the available space */
+    width: 100%; /* Full width */
+    border: none; /* Remove the iframe border */
+}
