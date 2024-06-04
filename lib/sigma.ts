@@ -4,7 +4,7 @@ import crypto from 'crypto';
 
 const getUserAssignment = (session: Session): { userId: string, email: string, teams: string[] } => {
   // todo: implement your own logic for determining the user's id, email, and teams
-  const teams = ['matts team'];
+  const teams = session.user.sigmaEmbed.roles;
   const email = session.user.sigmaEmbed.email;
   const userId = session.user.sub.split("|")[1];
 
@@ -23,10 +23,13 @@ export const signedEmbedUrl = async (): Promise<string> => {
     searchParams += `&:email=${email}`;
     searchParams += `&:external_user_id=${userId}`;
     searchParams += `&:external_user_team=${teams.map(encodeURIComponent).join(',')}`;
-    searchParams += '&:account_type=Pro';
+    searchParams += '&:account_type=Creator';
     searchParams += '&:mode=userbacked';
-    searchParams += '&:session_length=600';
-    searchParams += '&:show_footer=false';
+    searchParams += '&:session_length=3600';
+    searchParams += '&:show_footer=true';
+    searchParams += '&:theme=Dark';
+    searchParams += '&:loading_bg=050505';
+    searchParams += '&:loading_text=fff';
     searchParams += `&:time=${Math.floor(new Date().getTime() / 1000)}`;
 
     const URL_WITH_SEARCH_PARAMS = SIGMA_EMBED_PATH + searchParams;
