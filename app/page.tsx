@@ -1,23 +1,29 @@
+import { signedEmbedUrl } from '@/lib/sigma';
+import Image from 'next/image'
 import { getSession } from '@auth0/nextjs-auth0';
 import React from 'react';
+import SigmaCrane from './static/sigmacrane.png';
 
 export default async function Home() {
   const session = await getSession();
 
+  if (!session) {
+    return (
+      <main>
+        <pre>Welcome to the Zero to Data-App Demo</pre>
+        <Image height={200} src={SigmaCrane} alt="see yourself in the data"/>
+      </main>
+    );
+  }
+
+  const embedUrl = await signedEmbedUrl();
+
   return (
     <main>
       {
-        session ? (
-          <>
-            <h3>User</h3>
-            <pre>Welcome {session.user.nickname}</pre>
-            { session.user.picture &&
-              <img height="64px" src={session.user.picture} />
-            }
-          </>
-        ) : (
-          <h3>Welcome! Please log in to use the application</h3>
-        )
+        <>
+          <iframe style={{height: '700px', width: '100%'}} src={embedUrl} frameBorder="0"/>
+        </>
       }
     </main>
   );

@@ -15,18 +15,13 @@ export default function Nav() {
       <div className={`header ${pageName || 'home'}`}>
         <nav>
           <ul>
-            <li>
-              <Link href="/" legacyBehavior>
-                <a>Home</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/embedded-application" legacyBehavior>
-                <a>Embedded Application</a>
-              </Link>
-            </li>
             {user ? (
               <>
+                <li>
+                  <Link href="/" legacyBehavior>
+                    <a>Sales Analysis</a>
+                  </Link>
+                </li>
                 <li>
                   <a href="/api/auth/logout" data-testid="logout">
                     Logout
@@ -35,6 +30,11 @@ export default function Nav() {
               </>
             ) : (
               <>
+                <li>
+                  <Link href="/" legacyBehavior>
+                    <a>Home</a>
+                  </Link>
+                </li>
                 <li>
                   <a href="/api/auth/login" data-testid="login">
                     Login
