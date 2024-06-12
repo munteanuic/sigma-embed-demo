@@ -23,7 +23,9 @@ export const signedEmbedUrl = async (): Promise<string> => {
     searchParams += `&:email=${email}`;
     searchParams += `&:external_user_id=${userId}`;
     searchParams += `&:external_user_team=${teams.map(encodeURIComponent).join(',')}`;
-    searchParams += '&:account_type=Creator';
+    searchParams += email === "ioana+admin@sigmacomputing.com"
+        ? "&:account_type=Creator"
+        : "&:account_type=Viewer";
     searchParams += '&:mode=userbacked';
     searchParams += '&:session_length=3600';
     searchParams += '&:show_footer=true';
