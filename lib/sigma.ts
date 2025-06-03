@@ -31,7 +31,7 @@ export const signedEmbedUrl = async (): Promise<string> => {
   );
   try {
     let searchParams = `?:jwt=${jwt}`;
-    searchParams += "?:embed=true";
+    searchParams += "&:embed=true";
     searchParams += "&:theme=Dark";
     searchParams += "&:menu_position=bottom";
 
