@@ -1,25 +1,25 @@
-'use client';
+"use client";
 
-import React from 'react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { useUser } from '@auth0/nextjs-auth0/client';
+import React from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useUser } from "@auth0/nextjs-auth0/client";
 
 export default function Nav() {
   const { user } = useUser();
   const pathname = usePathname();
-  const pageName = pathname?.split('/').pop();
+  const pageName = pathname?.split("/").pop();
 
   return (
     <>
-      <div className={`header ${pageName || 'home'}`}>
+      <div className={`header ${pageName || "home"}`}>
         <nav>
           <ul>
             {user ? (
               <>
                 <li>
                   <Link href="/" legacyBehavior>
-                    <a>Sales Analysis</a>
+                    <a>Restaurant Review App</a>
                   </Link>
                 </li>
                 <li>

@@ -32,7 +32,6 @@ export const signedEmbedUrl = async (): Promise<string> => {
   try {
     let searchParams = `?:jwt=${jwt}`;
     searchParams += "&:embed=true";
-    searchParams += "&:theme=Dark";
     searchParams += "&:menu_position=bottom";
 
     const URL_WITH_SEARCH_PARAMS = SIGMA_EMBED_PATH + searchParams;
